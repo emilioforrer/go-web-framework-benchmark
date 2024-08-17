@@ -1,0 +1,71 @@
+version: '3'
+
+x-go-app-options: &go-app-options
+  build:
+    context: .
+    dockerfile: Dockerfile
+    target: prod
+  # volumes:
+    # - .:/app
+  # environment:
+  #   - ENV=development
+  depends_on:
+    - db
+  # restart: unless-stopped
+
+services:
+  go-fr:
+    <<: *go-app-options
+    ports:
+    - "8080:8000"
+    command: /app/go-fr
+    environment:
+    - LOG_LEVEL=FATAL
+
+  go-bun:
+    <<: *go-app-options
+    ports:
+    - "8081:8000"
+    command: /app/go-bun
+
+  go-echo:
+    <<: *go-app-options
+    ports:
+    - "8082:8000"
+    command: /app/go-echo
+  go-fuego:
+    <<: *go-app-options
+    ports:
+    - "8083:8000"
+    command: /app/go-fuego
+  go-fiber:
+    <<: *go-app-options
+    ports:
+    - "8084:8000"
+    command: /app/go-fiber
+  go-std:
+    <<: *go-app-options
+    ports:
+    - "8085:8000"
+    command: /app/go-std
+  go-gin:
+    <<: *go-app-options
+    ports:
+    - "8086:8000"
+    command: /app/go-gin
+    environment:
+    - GIN_MODE=release
+  db:
+    image: postgres:14.1
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydb
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+volumes:
+  db-data:

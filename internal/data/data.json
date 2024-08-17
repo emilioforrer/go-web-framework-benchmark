@@ -1,0 +1,195 @@
+{
+  "countries": [
+      {
+          "name": "Afghanistan",
+          "isoCode": {
+              "alpha2": "AF",
+              "alpha3": "AFG",
+              "numeric": "004"
+          },
+          "capital": "Kabul",
+          "population": 38928346,
+          "area": 652230,
+          "currency": "AFN",
+          "officialLanguages": [
+              "Pashto",
+              "Dari"
+          ],
+          "region": "Asia",
+          "subregion": "Southern Asia"
+      },
+      {
+          "name": "Albania",
+          "isoCode": {
+              "alpha2": "AL",
+              "alpha3": "ALB",
+              "numeric": "008"
+          },
+          "capital": "Tirana",
+          "population": 2877797,
+          "area": 28748,
+          "currency": "ALL",
+          "officialLanguages": [
+              "Albanian"
+          ],
+          "region": "Europe",
+          "subregion": "Southern Europe"
+      },
+      {
+          "name": "Algeria",
+          "isoCode": {
+              "alpha2": "DZ",
+              "alpha3": "DZA",
+              "numeric": "012"
+          },
+          "capital": "Algiers",
+          "population": 43851044,
+          "area": 2381741,
+          "currency": "DZD",
+          "officialLanguages": [
+              "Arabic",
+              "Berber"
+          ],
+          "region": "Africa",
+          "subregion": "Northern Africa"
+      },
+      {
+          "name": "Andorra",
+          "isoCode": {
+              "alpha2": "AD",
+              "alpha3": "AND",
+              "numeric": "020"
+          },
+          "capital": "Andorra la Vella",
+          "population": 77265,
+          "area": 468,
+          "currency": "EUR",
+          "officialLanguages": [
+              "Catalan"
+          ],
+          "region": "Europe",
+          "subregion": "Southern Europe"
+      },
+      {
+          "name": "Angola",
+          "isoCode": {
+              "alpha2": "AO",
+              "alpha3": "AGO",
+              "numeric": "024"
+          },
+          "capital": "Luanda",
+          "population": 32866272,
+          "area": 1246700,
+          "currency": "AOA",
+          "officialLanguages": [
+              "Portuguese"
+          ],
+          "region": "Africa",
+          "subregion": "Middle Africa"
+      },
+      {
+          "name": "Argentina",
+          "isoCode": {
+              "alpha2": "AR",
+              "alpha3": "ARG",
+              "numeric": "032"
+          },
+          "capital": "Buenos Aires",
+          "population": 45195774,
+          "area": 2780400,
+          "currency": "ARS",
+          "officialLanguages": [
+              "Spanish"
+          ],
+          "region": "Americas",
+          "subregion": "South America"
+      },
+      {
+          "name": "Armenia",
+          "isoCode": {
+              "alpha2": "AM",
+              "alpha3": "ARM",
+              "numeric": "051"
+          },
+          "capital": "Yerevan",
+          "population": 2963243,
+          "area": 29743,
+          "currency": "AMD",
+          "officialLanguages": [
+              "Armenian"
+          ],
+          "region": "Asia",
+          "subregion": "Western Asia"
+      },
+      {
+          "name": "Australia",
+          "isoCode": {
+              "alpha2": "AU",
+              "alpha3": "AUS",
+              "numeric": "036"
+          },
+          "capital": "Canberra",
+          "population": 25499884,
+          "area": 7692024,
+          "currency": "AUD",
+          "officialLanguages": [
+              "English"
+          ],
+          "region": "Oceania",
+          "subregion": "Australia and New Zealand"
+      },
+      {
+          "name": "Austria",
+          "isoCode": {
+              "alpha2": "AT",
+              "alpha3": "AUT",
+              "numeric": "040"
+          },
+          "capital": "Vienna",
+          "population": 9006398,
+          "area": 83871,
+          "currency": "EUR",
+          "officialLanguages": [
+              "German"
+          ],
+          "region": "Europe",
+          "subregion": "Western Europe"
+      },
+      {
+          "name": "Azerbaijan",
+          "isoCode": {
+              "alpha2": "AZ",
+              "alpha3": "AZE",
+              "numeric": "031"
+          },
+          "capital": "Baku",
+          "population": 10139177,
+          "area": 86600,
+          "currency": "AZN",
+          "officialLanguages": [
+              "Azerbaijani"
+          ],
+          "region": "Asia",
+          "subregion": "Western Asia"
+      },
+      {
+          "name": "Zimbabwe",
+          "isoCode": {
+              "alpha2": "ZW",
+              "alpha3": "ZWE",
+              "numeric": "716"
+          },
+          "capital": "Harare",
+          "population": 14862924,
+          "area": 390757,
+          "currency": "ZWL",
+          "officialLanguages": [
+              "English",
+              "Shona",
+              "Sindebele"
+          ],
+          "region": "Africa",
+          "subregion": "Eastern Africa"
+      }
+  ]
+}
