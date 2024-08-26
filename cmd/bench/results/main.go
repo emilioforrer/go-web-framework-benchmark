@@ -66,6 +66,35 @@ func main() {
 		fmt.Println("---------------------------------")
 	}
 
+	exportResults(results)
+
+}
+
+func exportResults(results []benchmark.Result) {
+	var sb strings.Builder
+	// Get the current time
+	timestamp := time.Now().Format("2006-01-02-15-04-05")
+	// Construct the file name with the timestamp
+	fileName := fmt.Sprintf("results-history/result-%s.json", timestamp)
+
+	for _, result := range results {
+		jsonData, err := json.Marshal(result)
+		if err != nil {
+			fmt.Println("Error marshalling to JSON:", err)
+			return
+		}
+		sb.WriteString(string(jsonData))
+	}
+
+	// Create a new file for writing
+	file, err := os.Create(fileName)
+	if err != nil {
+		fmt.Println("Error creating file:", err)
+		return
+	}
+	file.Write([]byte(sb.String()))
+
+	defer file.Close()
 }
 
 func parseBenchmarkData(name string, data []byte) (benchmark.Result, error) {
