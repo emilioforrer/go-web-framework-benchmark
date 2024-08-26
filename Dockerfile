@@ -18,6 +18,7 @@ RUN go build -ldflags="-s -w" -trimpath -o dist/go-fuego cmd/go-fuego/main.go
 RUN go build -ldflags="-s -w" -trimpath -o dist/go-fiber cmd/go-fiber/main.go
 RUN go build -ldflags="-s -w" -trimpath -o dist/go-std cmd/go-std/main.go
 RUN go build -ldflags="-s -w" -trimpath -o dist/go-gin cmd/go-gin/main.go
+RUN go build -ldflags="-s -w" -trimpath -o dist/go-gorilla-mux cmd/go-gorilla-mux/main.go
 
 # Production stage
 FROM scratch as prod

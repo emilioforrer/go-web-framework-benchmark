@@ -1,12 +1,16 @@
 package main
 
-import "github.com/gofiber/fiber/v2"
+import (
+	"local/go-benchmarks/internal/data"
+
+	"github.com/gofiber/fiber/v2"
+)
 
 func main() {
 	app := fiber.New()
 
 	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("Hello, World!")
+		return c.Send(data.Get())
 	})
 
 	app.Listen(":8000")

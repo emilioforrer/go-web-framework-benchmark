@@ -1,4 +1,4 @@
-package main
+package testing
 
 import (
 	"fmt"
@@ -79,6 +79,8 @@ func calculateScore(r Result) float64 {
 }
 
 func BenchmarkRequests(b *testing.B) {
+	fmt.Println("Deprecated method for benchmarking. Use the new method described in the README.md file instead")
+
 	services := []Service{
 		{"GoFr", "http://localhost:8080"},
 		{"Bun", "http://localhost:8081"},

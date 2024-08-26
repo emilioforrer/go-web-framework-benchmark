@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"local/go-benchmarks/internal/data"
 	"log"
 	"net/http"
 
@@ -33,6 +34,6 @@ func main() {
 // Handler function
 func helloHandler(w http.ResponseWriter, req bunrouter.Request) error {
 	// Write the plain text response
-	_, err := w.Write([]byte("Hello, World!"))
+	_, err := w.Write(data.Get())
 	return err
 }

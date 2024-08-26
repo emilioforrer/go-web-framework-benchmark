@@ -1,0 +1,4 @@
+[tools]
+go = "1.23.0"
+"cargo:oha" = "latest"
+hyperfine = "latest"

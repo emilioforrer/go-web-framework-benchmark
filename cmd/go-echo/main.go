@@ -1,6 +1,7 @@
 package main
 
 import (
+	"local/go-benchmarks/internal/data"
 	"net/http"
 
 	"github.com/labstack/echo/v4"
@@ -19,5 +20,5 @@ func main() {
 
 // Handler
 func hello(c echo.Context) error {
-	return c.String(http.StatusOK, "Hello, World!")
+	return c.Blob(http.StatusOK, "text/plain", data.Get())
 }

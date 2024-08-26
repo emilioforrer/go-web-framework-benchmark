@@ -55,6 +55,11 @@ services:
     command: /app/go-gin
     environment:
     - GIN_MODE=release
+  go-gorilla-mux:
+    <<: *go-app-options
+    ports:
+    - "8087:8000"
+    command: /app/go-gorilla-mux
   db:
     image: postgres:14.1
     environment:
