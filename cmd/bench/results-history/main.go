@@ -20,7 +20,8 @@ func main() {
 		log.Fatalf("Failed to read results: %v", err)
 	}
 
-	results := benchmark.CalculateP99(groupedResults)
+	// results := benchmark.CalculateP99(groupedResults)
+	results := benchmark.CalculateAverages(groupedResults)
 
 	// Sort the results by score in descending order
 	sort.Slice(results, func(i, j int) bool {
@@ -59,6 +60,7 @@ func readResults(directory string) (map[string][]benchmark.Result, error) {
 
 			// Group results by Name
 			for _, result := range resultArray {
+				result.Score = benchmark.CalculateScore(result)
 				groupedResults[result.Name] = append(groupedResults[result.Name], result)
 			}
 		}
