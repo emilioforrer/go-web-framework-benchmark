@@ -8,17 +8,28 @@ tasks:
     cmds:
       - go test -bench=. -benchtime=10s -count=5 ./testing/...
     silent: true
-
   becnhmark:
     cmds:
+    - task: results-generator
+    - task: results-printer
+    - task: results-exporter
+    silent: true
+  results-generator:
+    cmds:
+    - echo "============================================="
+    - echo "Generating results file"
+    - echo "============================================="
     - go run cmd/bench/generate/main.go
-    - task: results
-  results:
+    silent: true
+  results-printer:
     cmds:
     - echo "============================================="
     - echo "Printing results"
     - echo "============================================="
     - go run cmd/bench/results/main.go
+    silent: true
+  results-exporter:
+    cmds:
     - echo "============================================="
     - echo "Exporting results history"
     - echo "============================================="
