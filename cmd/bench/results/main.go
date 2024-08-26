@@ -71,19 +71,15 @@ func main() {
 }
 
 func exportResults(results []benchmark.Result) {
-	var sb strings.Builder
 	// Get the current time
 	timestamp := time.Now().Format("2006-01-02-15-04-05")
 	// Construct the file name with the timestamp
 	fileName := fmt.Sprintf("results-history/result-%s.json", timestamp)
 
-	for _, result := range results {
-		jsonData, err := json.Marshal(result)
-		if err != nil {
-			fmt.Println("Error marshalling to JSON:", err)
-			return
-		}
-		sb.WriteString(string(jsonData))
+	jsonData, err := json.Marshal(results)
+	if err != nil {
+		fmt.Println("Error marshalling to JSON:", err)
+		return
 	}
 
 	// Create a new file for writing
@@ -92,7 +88,7 @@ func exportResults(results []benchmark.Result) {
 		fmt.Println("Error creating file:", err)
 		return
 	}
-	file.Write([]byte(sb.String()))
+	file.Write(jsonData)
 
 	defer file.Close()
 }
