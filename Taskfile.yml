@@ -19,4 +19,15 @@ tasks:
     - echo "Printing results"
     - echo "============================================="
     - go run cmd/bench/results/main.go
+    - echo "============================================="
+    - echo "Exporting results history"
+    - echo "============================================="
+    - go run cmd/bench/results-export/main.go
+    silent: true
+  results-history-summary:
+    cmds:
+    - echo "============================================="
+    - echo "Printing results history summary"
+    - echo "============================================="
+    - go run cmd/bench/results-history/main.go
     silent: true

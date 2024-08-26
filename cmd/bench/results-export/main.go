@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"local/go-benchmarks/internal/benchmark"
 	"local/go-benchmarks/internal/core"
 )
 
@@ -13,8 +12,5 @@ func main() {
 		return
 	}
 
-	// Print the results
-	for _, result := range results {
-		benchmark.PrintResult(result)
-	}
+	core.ExportResults(results)
 }
