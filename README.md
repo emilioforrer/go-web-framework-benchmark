@@ -15,6 +15,17 @@ mise install
 mise shell
 ```
 
+## Frameworks and libraries
+
+- [Go Standard Library (go-std)](https://github.com/golang/go)
+- [Gin](https://github.com/gin-gonic/gin)
+- [Gorilla Mux](https://github.com/gorilla/mux)
+- [Echo](https://github.com/labstack/echo)
+- [GoFiber](https://github.com/gofiber/fiber)
+- [GoFuego](https://github.com/go-fuego/fuego)
+- [GoFr](https://github.com/gofr-dev/gofr)
+- [Go BunRouter](https://github.com/uptrace/bunrouter)
+
 ## Run the benchmark
 
 Run the services:
