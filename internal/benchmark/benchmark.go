@@ -3,18 +3,19 @@ package benchmark
 import "time"
 
 type Result struct {
-	Name               string
-	Duration           time.Duration
-	SuccessRate        float64
-	SuccessfulRequests int
-	MinLatency         time.Duration
-	MaxLatency         time.Duration
-	AverageLatency     time.Duration
-	P90Latency         time.Duration
-	P99Latency         time.Duration
-	P99999Latency      time.Duration
-	RequestsPerSecond  float64
-	Score              float64
+	Name                 string
+	Duration             time.Duration
+	SuccessRate          float64
+	SuccessfulRequests   int
+	MinLatency           time.Duration
+	MaxLatency           time.Duration
+	AverageLatency       time.Duration
+	P90Latency           time.Duration
+	P99Latency           time.Duration
+	P99999Latency        time.Duration
+	AbortedDueToDeadline int
+	RequestsPerSecond    float64
+	Score                float64
 }
 
 type Summary struct {
@@ -45,4 +46,5 @@ type BenchmarkData struct {
 	Summary                Summary            `json:"summary"`
 	LatencyPercentiles     LatencyPercentiles `json:"latencyPercentiles"`
 	StatusCodeDistribution map[string]int     `json:"statusCodeDistribution"`
+	ErrorDistribution      map[string]int     `json:"errorDistribution"`
 }

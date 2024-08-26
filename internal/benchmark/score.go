@@ -24,10 +24,15 @@ func CalculateScore(r Result) float64 {
 	weightedAvgLatency := avgLatency * 0.9       // Increase the weight of Average Latency
 	reducedLatencySpread := latencySpread * 0.8  // // Reduce the impact of latency spread
 
+	// Optimize the impact of SuccessfulRequests and AbortedDueToDeadline
+	successFactor := float64(r.SuccessfulRequests) * 1.2
+	abortPenalty := float64(r.AbortedDueToDeadline) * 1.5
+
 	// Calculate the score using the modified formula:
 	// score := (successRate * (weightedRequestsPerSecond*1000000 + float64(r.SuccessfulRequests))) /
 	// 	(minLatency + maxLatency + weightedAvgLatency + weightedP90Latency + weightedP99Latency + weightedP99999Latency + reducedLatencySpread)
-	score := (successRate * (weightedRequestsPerSecond*1000000 + float64(r.SuccessfulRequests))) /
+
+	score := (successRate * (weightedRequestsPerSecond + successFactor - abortPenalty)) /
 		(weightedAvgLatency + weightedP90Latency + weightedP99Latency + weightedP99999Latency + reducedLatencySpread)
 
 	return score

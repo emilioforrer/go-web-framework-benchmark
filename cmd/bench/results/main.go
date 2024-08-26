@@ -53,6 +53,8 @@ func main() {
 	for _, result := range results {
 		fmt.Printf("Name: %s\n", result.Name)
 		fmt.Printf("Requests Per Second: %.2f\n", result.RequestsPerSecond)
+		fmt.Printf("Aborted Due To Deadline: %d\n", result.AbortedDueToDeadline)
+		fmt.Printf("Successful Requests: %d\n", result.SuccessfulRequests)
 		fmt.Printf("P99.999 Latency: %s\n", result.P99999Latency)
 		fmt.Printf("P99 Latency: %s\n", result.P99Latency)
 		fmt.Printf("P90 Latency: %s\n", result.P90Latency)
@@ -60,9 +62,8 @@ func main() {
 		fmt.Printf("Min Latency: %s\n", result.MinLatency)
 		fmt.Printf("Max Latency: %s\n", result.MaxLatency)
 		fmt.Printf("Duration: %s\n", result.Duration)
-		fmt.Printf("Successful Requests: %d\n", result.SuccessfulRequests)
 		fmt.Printf("Score: %.2f\n", result.Score)
-		fmt.Println("----------------------------")
+		fmt.Println("---------------------------------")
 	}
 
 }
@@ -74,17 +75,18 @@ func parseBenchmarkData(name string, data []byte) (benchmark.Result, error) {
 	}
 
 	r := benchmark.Result{
-		Name:               name,
-		Duration:           time.Duration(benchmarkData.Summary.Total * float64(time.Second)),
-		SuccessfulRequests: benchmarkData.StatusCodeDistribution["200"],
-		SuccessRate:        float64(benchmarkData.Summary.SuccessRate),
-		MinLatency:         time.Duration(benchmarkData.Summary.Fastest * float64(time.Second)),
-		MaxLatency:         time.Duration(benchmarkData.Summary.Slowest * float64(time.Second)),
-		AverageLatency:     time.Duration(benchmarkData.Summary.Average * float64(time.Second)),
-		P90Latency:         time.Duration(benchmarkData.LatencyPercentiles.P90 * float64(time.Second)),
-		P99Latency:         time.Duration(benchmarkData.LatencyPercentiles.P99 * float64(time.Second)),
-		P99999Latency:      time.Duration(benchmarkData.LatencyPercentiles.P99999 * float64(time.Second)),
-		RequestsPerSecond:  benchmarkData.Summary.RequestsPerSec,
+		Name:                 name,
+		Duration:             time.Duration(benchmarkData.Summary.Total * float64(time.Second)),
+		AbortedDueToDeadline: benchmarkData.ErrorDistribution["aborted due to deadline"],
+		SuccessfulRequests:   benchmarkData.StatusCodeDistribution["200"],
+		SuccessRate:          float64(benchmarkData.Summary.SuccessRate),
+		MinLatency:           time.Duration(benchmarkData.Summary.Fastest * float64(time.Second)),
+		MaxLatency:           time.Duration(benchmarkData.Summary.Slowest * float64(time.Second)),
+		AverageLatency:       time.Duration(benchmarkData.Summary.Average * float64(time.Second)),
+		P90Latency:           time.Duration(benchmarkData.LatencyPercentiles.P90 * float64(time.Second)),
+		P99Latency:           time.Duration(benchmarkData.LatencyPercentiles.P99 * float64(time.Second)),
+		P99999Latency:        time.Duration(benchmarkData.LatencyPercentiles.P99999 * float64(time.Second)),
+		RequestsPerSecond:    benchmarkData.Summary.RequestsPerSec,
 	}
 
 	// Calculate the score
