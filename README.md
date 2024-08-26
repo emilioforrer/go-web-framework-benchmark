@@ -39,9 +39,15 @@ In a separate terminal run the benchmark:
 task becnhmark
 ```
 
-##  Endpoints
+###  Docker services endpoint responses
 
 All services return the data embedded from [`internal/data/data.json`](internal/data/data.json).
+
+### Command used to benchmark all services
+
+```bash
+oha -j --no-tui -n 100 -c 100 -p 100 -z 30s http://localhost:{port}
+```
 
 ## Results
 
