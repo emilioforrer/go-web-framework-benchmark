@@ -36,7 +36,7 @@ func main() {
 		return
 	}
 
-	cmdEmptyFile := exec.Command("bash", "-c", fmt.Sprintf("echo \"\" > %s", outputFile))
+	cmdEmptyFile := exec.Command("bash", "-c", fmt.Sprintf(": > %s", outputFile))
 	// Execute the command and capture the output
 	_, err = cmdEmptyFile.Output()
 
@@ -53,7 +53,7 @@ func main() {
 			for _, port := range service.Ports {
 				hostPort := port[:strings.Index(port, ":")]
 				fmt.Printf("Benchmarking docker service: %s, on port: %s\n", serviceName, hostPort)
-				cmdText := fmt.Sprintf("echo \"Name:  %s\" >> %s && oha -j --no-tui -n 100 -c 100 -p 100 -z 30s http://localhost:%s >> %s", serviceName, outputFile, hostPort, outputFile)
+				cmdText := fmt.Sprintf("echo \"\nName:  %s\" >> %s && oha -j --no-tui -n 100 -c 100 -p 100 -z 30s http://localhost:%s >> %s", serviceName, outputFile, hostPort, outputFile)
 				// Define the command with arguments
 				cmd := exec.Command("bash", "-c", cmdText)
 
