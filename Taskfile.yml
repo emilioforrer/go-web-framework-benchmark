@@ -4,11 +4,11 @@ version: '3'
 
 
 tasks:
-  go-becnhmark:
+  go-benchmark:
     cmds:
       - go test -bench=. -benchtime=10s -count=5 ./testing/...
     silent: true
-  becnhmark:
+  benchmark:
     cmds:
     - task: results-generator
     - task: results-printer
