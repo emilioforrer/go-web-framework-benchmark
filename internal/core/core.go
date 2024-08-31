@@ -96,6 +96,11 @@ func parseBenchmarkData(name string, data []byte) (benchmark.Result, error) {
 		RequestsPerSecond:    benchmarkData.Summary.RequestsPerSec,
 	}
 
+	if r.SuccessRate == 0.0 {
+		fmt.Printf("Warning: Service '%s' has a success rate of 0. Please ensure that the service is up and running correctly.\n", r.Name)
+		return r, nil
+	}
+
 	// Calculate the score
 	r.Score = benchmark.CalculateScore(r)
 	return r, nil
