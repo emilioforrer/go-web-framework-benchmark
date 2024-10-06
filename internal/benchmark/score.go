@@ -37,3 +37,35 @@ func CalculateScore(r Result) float64 {
 
 	return score
 }
+
+// CalculateUtilizationScore calculates a weighted score based on resource usage (Memory, CPU, Network, Disk)
+// Memory, CPU, and Disk: lower is better, Network: higher is better
+func CalculateResourceUtilizationScore(result Result) float64 {
+	// Define weights for each resource type
+	const memoryWeight = 0.5
+	const cpuWeight = 0.4
+	const networkWeight = 0.1
+	const diskWeight = 0.1
+
+	// Memory, CPU, and Disk utilization: Lower values are better, so invert their contribution
+	memoryScore := (100 - result.Memory) * memoryWeight
+	cpuScore := (100 - result.CPU) * cpuWeight
+	diskScore := (100 - result.Disk) * diskWeight
+
+	// Network: Higher values are better, so use it as is
+	networkScore := result.Network * networkWeight
+
+	// Calculate the total weighted score
+	score := (memoryScore + cpuScore + networkScore + diskScore) * 0.1
+
+	return score
+}
+
+func CalculateTotalScore(score, statsScore float64) float64 {
+	weightScore := 0.7
+	weightStatsScore := 0.4
+
+	// Calculate weighted total score
+	totalScore := ((weightScore * score) + (weightStatsScore * statsScore)) / (weightScore + weightStatsScore)
+	return totalScore
+}

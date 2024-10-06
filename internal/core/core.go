@@ -1,18 +1,27 @@
 package core
 
 import (
+	"bufio"
 	"encoding/json"
 	"fmt"
 	"io"
 	"local/go-benchmarks/internal/benchmark"
 	"os"
+	"regexp"
+	"slices"
 	"sort"
+	"strconv"
 	"strings"
 	"time"
 )
 
 func ImportResults() ([]benchmark.Result, error) {
 	var results []benchmark.Result
+	statsFilePath := "stats.txt"
+	stats, err := ReadContainerStatsFromFile(statsFilePath)
+	if err != nil {
+		fmt.Println("Error opening file:", statsFilePath)
+	}
 
 	file, err := os.Open("out.txt")
 	if err != nil {
@@ -42,12 +51,23 @@ func ImportResults() ([]benchmark.Result, error) {
 			continue
 		}
 
+		stat, err := GetStatByName(stats, name)
+
+		if err == nil {
+			result.Memory = ParseUsage(stat.MemUsage)
+			result.CPU = ParseUsage(stat.CPUPerc)
+			result.Network = ParseUsage(stat.NetIO)
+			result.Disk = ParseUsage(stat.BlockIO)
+		}
+		result.ResourceUtilizationScore = benchmark.CalculateResourceUtilizationScore(result)
+		result.TotalScore = benchmark.CalculateTotalScore(result.PerformanceScore, result.ResourceUtilizationScore)
+
 		results = append(results, result)
 	}
 
 	// Sort the results by score in descending order
 	sort.Slice(results, func(i, j int) bool {
-		return results[i].Score > results[j].Score
+		return results[i].TotalScore > results[j].TotalScore
 	})
 	return results, nil
 }
@@ -102,6 +122,86 @@ func parseBenchmarkData(name string, data []byte) (benchmark.Result, error) {
 	}
 
 	// Calculate the score
-	r.Score = benchmark.CalculateScore(r)
+	r.PerformanceScore = benchmark.CalculateScore(r)
 	return r, nil
+}
+
+// ReadContainerStatsFromFile reads the container stats from a file and returns a slice of ContainerStats or an error
+func ReadContainerStatsFromFile(filePath string) ([]benchmark.ContainerStat, error) {
+	// Open the file
+	file, err := os.Open(filePath)
+	if err != nil {
+		return nil, fmt.Errorf("failed to open file: %w", err)
+	}
+	defer file.Close()
+
+	var statsSlice []benchmark.ContainerStat
+
+	// Create a scanner to read the file line by line
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		// Read each line of the file
+		line := scanner.Text()
+
+		// Unmarshal the JSON data into the struct
+		var stats benchmark.ContainerStat
+		err := json.Unmarshal([]byte(line), &stats)
+		if err != nil {
+			return nil, fmt.Errorf("failed to unmarshal line: %w", err)
+		}
+
+		// Append the unmarshaled struct to the slice
+		statsSlice = append(statsSlice, stats)
+	}
+
+	// Check for errors during scanning
+	if err := scanner.Err(); err != nil {
+		return nil, fmt.Errorf("error reading file: %w", err)
+	}
+
+	return statsSlice, nil
+}
+
+// GetStatByName searches for a container by its name using the slices package
+func GetStatByName(stats []benchmark.ContainerStat, name string) (*benchmark.ContainerStat, error) {
+	index := slices.IndexFunc(stats, func(stat benchmark.ContainerStat) bool {
+		suffix := fmt.Sprintf("%s-1", name)
+
+		return strings.HasSuffix(stat.Name, suffix)
+	})
+
+	if index != -1 {
+		return &stats[index], nil
+	}
+
+	return nil, fmt.Errorf("container with name %s not found", name)
+}
+
+func ParseUsage(usage string) float64 {
+	var value float64
+	re := regexp.MustCompile(`\d+\.\d+`)
+
+	// Find the first match
+	match := re.FindString(usage)
+	if match == "" {
+		return 0.0
+	}
+
+	value, _ = strconv.ParseFloat(match, 64)
+
+	pattern := `[KMGT]iB`
+	re = regexp.MustCompile(pattern)
+	formatMatch := re.FindString(usage)
+	if match != "" {
+		switch formatMatch {
+		case "KiB":
+			value = value / 1024
+		case "GiB":
+			value = value * 1024
+		case "TiB":
+			value = value * 1024 * 1024
+		}
+	}
+
+	return value
 }

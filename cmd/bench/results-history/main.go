@@ -25,7 +25,7 @@ func main() {
 
 	// Sort the results by score in descending order
 	sort.Slice(results, func(i, j int) bool {
-		return results[i].Score > results[j].Score
+		return results[i].PerformanceScore > results[j].PerformanceScore
 	})
 
 	// Print or use the averaged results
@@ -60,7 +60,7 @@ func readResults(directory string) (map[string][]benchmark.Result, error) {
 
 			// Group results by Name
 			for _, result := range resultArray {
-				result.Score = benchmark.CalculateScore(result)
+				result.PerformanceScore = benchmark.CalculateScore(result)
 				groupedResults[result.Name] = append(groupedResults[result.Name], result)
 			}
 		}

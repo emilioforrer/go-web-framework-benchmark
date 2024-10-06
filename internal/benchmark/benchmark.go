@@ -6,20 +6,39 @@ import (
 	"time"
 )
 
+// ContainerStat defines the structure of the JSON data
+type ContainerStat struct {
+	BlockIO   string `json:"BlockIO"`
+	CPUPerc   string `json:"CPUPerc"`
+	Container string `json:"Container"`
+	ID        string `json:"ID"`
+	MemPerc   string `json:"MemPerc"`
+	MemUsage  string `json:"MemUsage"`
+	Name      string `json:"Name"`
+	NetIO     string `json:"NetIO"`
+	PIDs      string `json:"PIDs"`
+}
+
 type Result struct {
-	Name                 string
-	Duration             time.Duration
-	SuccessRate          float64
-	SuccessfulRequests   int
-	MinLatency           time.Duration
-	MaxLatency           time.Duration
-	AverageLatency       time.Duration
-	P90Latency           time.Duration
-	P99Latency           time.Duration
-	P99999Latency        time.Duration
-	AbortedDueToDeadline int
-	RequestsPerSecond    float64
-	Score                float64
+	Name                     string
+	Duration                 time.Duration
+	SuccessRate              float64
+	SuccessfulRequests       int
+	MinLatency               time.Duration
+	MaxLatency               time.Duration
+	AverageLatency           time.Duration
+	P90Latency               time.Duration
+	P99Latency               time.Duration
+	P99999Latency            time.Duration
+	AbortedDueToDeadline     int
+	RequestsPerSecond        float64
+	PerformanceScore         float64
+	Memory                   float64
+	CPU                      float64
+	Network                  float64
+	Disk                     float64
+	ResourceUtilizationScore float64
+	TotalScore               float64
 }
 
 type Summary struct {
@@ -83,7 +102,7 @@ func CalculateAverages(groupedResults map[string][]Result) []Result {
 			totalP99999Latency += result.P99999Latency
 			totalAbortedDueToDeadline += result.AbortedDueToDeadline
 			totalRequestsPerSecond += result.RequestsPerSecond
-			totalScore += result.Score
+			totalScore += result.PerformanceScore
 		}
 
 		count := len(results)
@@ -100,7 +119,7 @@ func CalculateAverages(groupedResults map[string][]Result) []Result {
 			P99999Latency:        totalP99999Latency / time.Duration(count),
 			AbortedDueToDeadline: totalAbortedDueToDeadline / count,
 			RequestsPerSecond:    totalRequestsPerSecond / float64(count),
-			Score:                totalScore / float64(count),
+			PerformanceScore:     totalScore / float64(count),
 		})
 	}
 
@@ -119,7 +138,13 @@ func PrintResult(result Result) {
 	fmt.Printf("Min Latency: %s\n", result.MinLatency)
 	fmt.Printf("Max Latency: %s\n", result.MaxLatency)
 	fmt.Printf("Duration: %s\n", result.Duration)
-	fmt.Printf("Score: %.2f\n", result.Score)
+	fmt.Printf("Memory (MiB): %.2f\n", result.Memory)
+	fmt.Printf("CPU: %.2f\n", result.CPU)
+	fmt.Printf("Network: %.2f\n", result.Network)
+	fmt.Printf("Disk: %.2f\n", result.Disk)
+	fmt.Printf("Performance Score: %.2f\n", result.PerformanceScore)
+	fmt.Printf("Resource Utilization Score: %.2f\n", result.ResourceUtilizationScore)
+	fmt.Printf("Total Score: %.2f\n", result.TotalScore)
 	fmt.Println("---------------------------------")
 }
 
@@ -188,9 +213,9 @@ func CalculateP99(groupedResults map[string][]Result) []Result {
 		p99Result.RequestsPerSecond = calculatePercentileFloat64(results, func(r Result) float64 { return r.RequestsPerSecond })
 
 		sort.Slice(results, func(i, j int) bool {
-			return results[i].Score < results[j].Score
+			return results[i].PerformanceScore < results[j].PerformanceScore
 		})
-		p99Result.Score = calculatePercentileFloat64(results, func(r Result) float64 { return r.Score })
+		p99Result.PerformanceScore = calculatePercentileFloat64(results, func(r Result) float64 { return r.PerformanceScore })
 
 		p99Results = append(p99Results, p99Result)
 	}

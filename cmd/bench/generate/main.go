@@ -54,7 +54,7 @@ func main() {
 		}
 	}
 
-	for i, serviceName := range services {
+	for _, serviceName := range services {
 		service := compose.Services[serviceName]
 		for _, port := range service.Ports {
 			hostPort := port[:strings.Index(port, ":")]
@@ -68,11 +68,21 @@ func main() {
 				return
 			}
 
-			if i < len(services)-1 {
-				coolDown := 30 * time.Second
-				fmt.Printf("Waiting (%s) for resources to cooldown\n", coolDown)
-				time.Sleep(coolDown)
-			}
+			coolDown := 30 * time.Second
+			fmt.Printf("Waiting (%s) for resources to cooldown\n", coolDown)
+			time.Sleep(coolDown)
+
 		}
 	}
+
+	fmt.Println("Extracting docker stats")
+	cmdText := fmt.Sprintf("docker stats --format json --no-stream > %s", "stats.txt")
+	cmd := exec.Command("bash", "-c", cmdText)
+
+	_, err = cmd.Output()
+	if err != nil {
+		fmt.Printf("Error executing command '%s': %v\n", cmdText, err)
+		return
+	}
+
 }

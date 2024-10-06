@@ -84,195 +84,253 @@ Memory: 4619MiB / 20006MiB
 
 ```bash
 Name: go-hertz
-Requests Per Second: 36815.85
-Aborted Due To Deadline: 124
-Successful Requests: 2210226
-P99.999 Latency: 173.921821ms
-P99 Latency: 57.535842ms
-P90 Latency: 39.602673ms
-Average Latency: 27.065555ms
-Min Latency: 310.199µs
-Max Latency: 300.462612ms
-Duration: 1m0.03800698s
-Score: 3.09
----------------------------------
-Name: go-std-env-test-off
-Requests Per Second: 29602.54
-Aborted Due To Deadline: 473
-Successful Requests: 1777513
-P99.999 Latency: 127.64361ms
-P99 Latency: 68.25369ms
-P90 Latency: 48.39304ms
-Average Latency: 33.679369ms
-Min Latency: 249.03µs
-Max Latency: 241.037054ms
-Duration: 1m0.061942831s
-Score: 3.03
+Requests Per Second: 49014.10
+Aborted Due To Deadline: 427
+Successful Requests: 2942476
+P99.999 Latency: 116.943425ms
+P99 Latency: 43.23109ms
+P90 Latency: 29.826613ms
+Average Latency: 20.330005ms
+Min Latency: 187.9µs
+Max Latency: 280.246975ms
+Duration: 1m0.041964679s
+Memory (MiB): 62.69
+CPU: 0.02
+Network: 5.02
+Disk: 0.00
+Performance Score: 5.45
+Resource Utilization Score: 6.91
+Total Score: 5.98
 ---------------------------------
 Name: go-fiber
-Requests Per Second: 34690.32
-Aborted Due To Deadline: 328
-Successful Requests: 2082268
-P99.999 Latency: 167.591851ms
-P99 Latency: 81.84998ms
-P90 Latency: 47.831477ms
-Average Latency: 28.739445ms
-Min Latency: 211.323µs
-Max Latency: 289.791513ms
-Duration: 1m0.033916396s
-Score: 2.88
+Requests Per Second: 46920.83
+Aborted Due To Deadline: 285
+Successful Requests: 2816494
+P99.999 Latency: 201.180092ms
+P99 Latency: 61.370151ms
+P90 Latency: 34.983864ms
+Average Latency: 21.233266ms
+Min Latency: 142.389µs
+Max Latency: 290.552598ms
+Duration: 1m0.032587759s
+Memory (MiB): 26.07
+CPU: 0.02
+Network: 4.73
+Disk: 0.00
+Performance Score: 3.65
+Resource Utilization Score: 8.74
+Total Score: 5.50
 ---------------------------------
 Name: go-std-env-test-auto
-Requests Per Second: 29068.08
-Aborted Due To Deadline: 487
-Successful Requests: 1744510
-P99.999 Latency: 157.70361ms
-P99 Latency: 71.674126ms
-P90 Latency: 49.592156ms
-Average Latency: 34.294376ms
-Min Latency: 234.242µs
-Max Latency: 277.407669ms
-Duration: 1m0.031384048s
-Score: 2.54
+Requests Per Second: 35757.28
+Aborted Due To Deadline: 529
+Successful Requests: 2146625
+P99.999 Latency: 128.217075ms
+P99 Latency: 58.142922ms
+P90 Latency: 40.474456ms
+Average Latency: 27.845254ms
+Min Latency: 172.25µs
+Max Latency: 315.070319ms
+Duration: 1m0.048024835s
+Memory (MiB): 32.72
+CPU: 0.00
+Network: 3.31
+Disk: 0.00
+Performance Score: 3.48
+Resource Utilization Score: 8.40
+Total Score: 5.27
 ---------------------------------
 Name: go-std-env-test-on
-Requests Per Second: 28612.80
-Aborted Due To Deadline: 415
-Successful Requests: 1717211
-P99.999 Latency: 171.527517ms
-P99 Latency: 73.99696ms
-P90 Latency: 50.16427ms
-Average Latency: 34.846574ms
-Min Latency: 203.993µs
-Max Latency: 368.126729ms
-Duration: 1m0.029988797s
-Score: 2.19
----------------------------------
-Name: go-bun
-Requests Per Second: 29474.78
-Aborted Due To Deadline: 548
-Successful Requests: 1770188
-P99.999 Latency: 280.822164ms
-P99 Latency: 138.798028ms
-P90 Latency: 62.323629ms
-Average Latency: 33.761665ms
-Min Latency: 155.759µs
-Max Latency: 356.394652ms
-Duration: 1m0.076307863s
-Score: 1.60
----------------------------------
-Name: go-fuego
-Requests Per Second: 28760.44
-Aborted Due To Deadline: 204
-Successful Requests: 1726180
-P99.999 Latency: 321.594741ms
-P99 Latency: 157.845282ms
-P90 Latency: 62.845269ms
-Average Latency: 34.674647ms
-Min Latency: 200.242µs
-Max Latency: 400.081363ms
-Duration: 1m0.026338696s
-Score: 1.38
+Requests Per Second: 34277.61
+Aborted Due To Deadline: 703
+Successful Requests: 2057279
+P99.999 Latency: 138.281197ms
+P99 Latency: 61.710264ms
+P90 Latency: 42.70273ms
+Average Latency: 29.091307ms
+Min Latency: 131.688µs
+Max Latency: 261.873368ms
+Duration: 1m0.038675133s
+Memory (MiB): 28.84
+CPU: 0.00
+Network: 3.86
+Disk: 0.00
+Performance Score: 3.36
+Resource Utilization Score: 8.60
+Total Score: 5.26
 ---------------------------------
 Name: go-chi
-Requests Per Second: 28683.87
-Aborted Due To Deadline: 387
-Successful Requests: 1721937
-P99.999 Latency: 322.075113ms
-P99 Latency: 165.476555ms
-P90 Latency: 65.842095ms
-Average Latency: 34.752861ms
-Min Latency: 157.874µs
-Max Latency: 455.784047ms
-Duration: 1m0.04504078s
-Score: 1.33
+Requests Per Second: 38337.13
+Aborted Due To Deadline: 537
+Successful Requests: 2301049
+P99.999 Latency: 257.28865ms
+P99 Latency: 110.09385ms
+P90 Latency: 49.175117ms
+Average Latency: 25.994839ms
+Min Latency: 152.392µs
+Max Latency: 387.965259ms
+Duration: 1m0.03542742s
+Memory (MiB): 42.50
+CPU: 0.00
+Network: 3.45
+Disk: 0.00
+Performance Score: 2.24
+Resource Utilization Score: 7.91
+Total Score: 4.30
+---------------------------------
+Name: go-fuego
+Requests Per Second: 36514.60
+Aborted Due To Deadline: 630
+Successful Requests: 2191287
+P99.999 Latency: 235.250977ms
+P99 Latency: 116.018291ms
+P90 Latency: 50.401752ms
+Average Latency: 27.29842ms
+Min Latency: 143.615µs
+Max Latency: 360.454081ms
+Duration: 1m0.028506417s
+Memory (MiB): 44.37
+CPU: 0.00
+Network: 3.84
+Disk: 0.00
+Performance Score: 2.27
+Resource Utilization Score: 7.82
+Total Score: 4.29
 ---------------------------------
 Name: go-gorilla-mux
-Requests Per Second: 27802.30
-Aborted Due To Deadline: 140
-Successful Requests: 1669176
-P99.999 Latency: 308.93981ms
-P99 Latency: 177.078075ms
-P90 Latency: 75.240385ms
-Average Latency: 35.834482ms
-Min Latency: 181.77µs
-Max Latency: 570.148108ms
-Duration: 1m0.042360913s
-Score: 1.23
+Requests Per Second: 39234.58
+Aborted Due To Deadline: 602
+Successful Requests: 2355264
+P99.999 Latency: 256.701907ms
+P99 Latency: 121.064154ms
+P90 Latency: 53.625942ms
+Average Latency: 25.390759ms
+Min Latency: 110.832µs
+Max Latency: 380.518715ms
+Duration: 1m0.045652135s
+Memory (MiB): 46.45
+CPU: 0.00
+Network: 4.37
+Disk: 0.00
+Performance Score: 2.28
+Resource Utilization Score: 7.72
+Total Score: 4.26
 ---------------------------------
 Name: go-gin
-Requests Per Second: 28212.43
-Aborted Due To Deadline: 572
-Successful Requests: 1693222
-P99.999 Latency: 312.379736ms
-P99 Latency: 161.177572ms
-P90 Latency: 68.514333ms
-Average Latency: 35.316033ms
-Min Latency: 180.199µs
-Max Latency: 679.429998ms
-Duration: 1m0.037149827s
-Score: 1.20
+Requests Per Second: 35383.15
+Aborted Due To Deadline: 584
+Successful Requests: 2124452
+P99.999 Latency: 250.541738ms
+P99 Latency: 124.230529ms
+P90 Latency: 55.375655ms
+Average Latency: 28.134796ms
+Min Latency: 145.499µs
+Max Latency: 395.676116ms
+Duration: 1m0.057846172s
+Memory (MiB): 44.41
+CPU: 0.00
+Network: 3.82
+Disk: 0.00
+Performance Score: 2.05
+Resource Utilization Score: 7.82
+Total Score: 4.15
 ---------------------------------
 Name: go-echo
-Requests Per Second: 29620.06
-Aborted Due To Deadline: 511
-Successful Requests: 1777948
-P99.999 Latency: 414.400695ms
-P99 Latency: 156.677121ms
-P90 Latency: 66.417089ms
-Average Latency: 33.654044ms
-Min Latency: 131.972µs
-Max Latency: 587.87331ms
-Duration: 1m0.042376055s
-Score: 1.11
+Requests Per Second: 35965.54
+Aborted Due To Deadline: 362
+Successful Requests: 2160219
+P99.999 Latency: 245.936605ms
+P99 Latency: 125.794806ms
+P90 Latency: 53.637771ms
+Average Latency: 27.699933ms
+Min Latency: 134.368µs
+Max Latency: 367.694084ms
+Duration: 1m0.073646261s
+Memory (MiB): 49.60
+CPU: 0.00
+Network: 3.40
+Disk: 0.00
+Performance Score: 2.15
+Resource Utilization Score: 7.55
+Total Score: 4.11
 ---------------------------------
 Name: go-std
-Requests Per Second: 27229.28
-Aborted Due To Deadline: 626
-Successful Requests: 1634805
-P99.999 Latency: 441.443551ms
-P99 Latency: 179.643816ms
-P90 Latency: 72.825259ms
-Average Latency: 36.567183ms
-Min Latency: 166.652µs
-Max Latency: 595.80428ms
-Duration: 1m0.06147945s
-Score: 0.96
+Requests Per Second: 35647.39
+Aborted Due To Deadline: 134
+Successful Requests: 2140200
+P99.999 Latency: 250.322655ms
+P99 Latency: 128.82052ms
+P90 Latency: 55.02267ms
+Average Latency: 27.977318ms
+Min Latency: 122.824µs
+Max Latency: 430.874717ms
+Duration: 1m0.041820449s
+Memory (MiB): 46.45
+CPU: 0.00
+Network: 4.44
+Disk: 0.00
+Performance Score: 2.02
+Resource Utilization Score: 7.72
+Total Score: 4.09
+---------------------------------
+Name: go-bun
+Requests Per Second: 36622.09
+Aborted Due To Deadline: 439
+Successful Requests: 2198714
+P99.999 Latency: 234.378226ms
+P99 Latency: 115.308332ms
+P90 Latency: 50.258369ms
+Average Latency: 27.201824ms
+Min Latency: 141.701µs
+Max Latency: 295.011929ms
+Duration: 1m0.049900626s
+Memory (MiB): 73.16
+CPU: 0.00
+Network: 6.44
+Disk: 0.00
+Performance Score: 2.39
+Resource Utilization Score: 6.41
+Total Score: 3.85
 ---------------------------------
 Name: go-fr
-Requests Per Second: 13037.00
-Aborted Due To Deadline: 919
-Successful Requests: 782440
-P99.999 Latency: 1.20804671s
-P99 Latency: 604.45533ms
-P90 Latency: 290.61296ms
-Average Latency: 76.174679ms
-Min Latency: 192.071µs
-Max Latency: 1.653890207s
-Duration: 1m0.087359437s
-Score: 0.16
+Requests Per Second: 15903.35
+Aborted Due To Deadline: 749
+Successful Requests: 954588
+P99.999 Latency: 1.013386898s
+P99 Latency: 488.766112ms
+P90 Latency: 220.487259ms
+Average Latency: 62.549239ms
+Min Latency: 137.052µs
+Max Latency: 1.690303397s
+Duration: 1m0.07143065s
+Memory (MiB): 84.17
+CPU: 0.00
+Network: 3.97
+Disk: 0.00
+Performance Score: 0.23
+Resource Utilization Score: 5.83
+Total Score: 2.27
+---------------------------------
+Name: go-std-env-test-off
+Requests Per Second: 31355.46
+Aborted Due To Deadline: 500
+Successful Requests: 1882761
+P99.999 Latency: 179.009328ms
+P99 Latency: 71.846076ms
+P90 Latency: 45.398098ms
+Average Latency: 31.76856ms
+Min Latency: 225.642µs
+Max Latency: 309.115502ms
+Duration: 1m0.061652014s
+Memory (MiB): 3903.49
+CPU: 0.00
+Network: 3.91
+Disk: 0.00
+Performance Score: 2.49
+Resource Utilization Score: -185.14
+Total Score: -65.74
 ---------------------------------
 
 ```
 
-
 ---
-
-#### Docker status after benchmark (`docker stats --format json --no-stream`)
-
-
-```json
-{"BlockIO":"0B / 0B","CPUPerc":"0.00%","Container":"2b61dd9ef787","ID":"2b61dd9ef787","MemPerc":"0.66%","MemUsage":"26.88MiB / 4GiB","Name":"go-web-framework-benchmark-go-std-env-test-auto-1","NetIO":"2.77GB / 56.3GB","PIDs":"8"}
-{"BlockIO":"0B / 0B","CPUPerc":"0.00%","Container":"eaca13fb9bae","ID":"eaca13fb9bae","MemPerc":"0.75%","MemUsage":"30.54MiB / 4GiB","Name":"go-web-framework-benchmark-go-std-env-test-on-1","NetIO":"3.34GB / 67.9GB","PIDs":"8"}
-{"BlockIO":"0B / 0B","CPUPerc":"0.01%","Container":"65a8642d6817","ID":"65a8642d6817","MemPerc":"95.30%","MemUsage":"3.812GiB / 4GiB","Name":"go-web-framework-benchmark-go-std-env-test-off-1","NetIO":"3.43GB / 69.8GB","PIDs":"9"}
-{"BlockIO":"0B / 0B","CPUPerc":"0.00%","Container":"577a4c8cd444","ID":"577a4c8cd444","MemPerc":"1.11%","MemUsage":"45.39MiB / 4GiB","Name":"go-web-framework-benchmark-go-gorilla-mux-1","NetIO":"3.77GB / 77GB","PIDs":"28"}
-{"BlockIO":"0B / 0B","CPUPerc":"0.00%","Container":"85a9324c73f7","ID":"85a9324c73f7","MemPerc":"2.68%","MemUsage":"109.8MiB / 4GiB","Name":"go-web-framework-benchmark-go-fr-1","NetIO":"1.55GB / 33.3GB","PIDs":"25"}
-{"BlockIO":"0B / 0B","CPUPerc":"0.19%","Container":"ccdc3ab0fbfe","ID":"ccdc3ab0fbfe","MemPerc":"1.03%","MemUsage":"42.14MiB / 4GiB","Name":"go-web-framework-benchmark-go-chi-1","NetIO":"2.87GB / 58.7GB","PIDs":"30"}
-{"BlockIO":"0B / 0B","CPUPerc":"0.01%","Container":"dccae7f8071d","ID":"dccae7f8071d","MemPerc":"1.47%","MemUsage":"60.39MiB / 4GiB","Name":"go-web-framework-benchmark-go-hertz-1","NetIO":"4.27GB / 85.9GB","PIDs":"19"}
-{"BlockIO":"0B / 0B","CPUPerc":"0.00%","Container":"63c99e69f142","ID":"63c99e69f142","MemPerc":"1.02%","MemUsage":"41.85MiB / 4GiB","Name":"go-web-framework-benchmark-go-bun-1","NetIO":"3.42GB / 70GB","PIDs":"28"}
-{"BlockIO":"0B / 0B","CPUPerc":"0.00%","Container":"cd0194d6976c","ID":"cd0194d6976c","MemPerc":"1.07%","MemUsage":"44MiB / 4GiB","Name":"go-web-framework-benchmark-go-echo-1","NetIO":"2.85GB / 58.2GB","PIDs":"28"}
-{"BlockIO":"0B / 0B","CPUPerc":"0.02%","Container":"d08e350e031c","ID":"d08e350e031c","MemPerc":"0.63%","MemUsage":"25.97MiB / 4GiB","Name":"go-web-framework-benchmark-go-fiber-1","NetIO":"4.02GB / 81.6GB","PIDs":"31"}
-{"BlockIO":"0B / 0B","CPUPerc":"0.00%","Container":"6b57d4c58caa","ID":"6b57d4c58caa","MemPerc":"1.02%","MemUsage":"41.69MiB / 4GiB","Name":"go-web-framework-benchmark-go-fuego-1","NetIO":"3.28GB / 67.1GB","PIDs":"28"}
-{"BlockIO":"0B / 0B","CPUPerc":"0.00%","Container":"136ddc98ae7e","ID":"136ddc98ae7e","MemPerc":"1.12%","MemUsage":"45.98MiB / 4GiB","Name":"go-web-framework-benchmark-go-std-1","NetIO":"3.9GB / 79.5GB","PIDs":"29"}
-{"BlockIO":"0B / 0B","CPUPerc":"0.00%","Container":"f2b686330000","ID":"f2b686330000","MemPerc":"1.13%","MemUsage":"46.11MiB / 4GiB","Name":"go-web-framework-benchmark-go-gin-1","NetIO":"3.28GB / 67GB","PIDs":"30"}
-```
