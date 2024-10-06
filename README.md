@@ -95,9 +95,9 @@ Min Latency: 187.9µs
 Max Latency: 280.246975ms
 Duration: 1m0.041964679s
 Memory (MiB): 62.69
-CPU: 0.02
-Network: 5.02
-Disk: 0.00
+CPU (%): 0.02
+Network (NetIO - MiB): 5.02
+Disk (BlockIO - MiB): 0.00
 Performance Score: 5.45
 Resource Utilization Score: 6.91
 Total Score: 5.98
@@ -114,9 +114,9 @@ Min Latency: 142.389µs
 Max Latency: 290.552598ms
 Duration: 1m0.032587759s
 Memory (MiB): 26.07
-CPU: 0.02
-Network: 4.73
-Disk: 0.00
+CPU (%): 0.02
+Network (NetIO - MiB): 4.73
+Disk (BlockIO - MiB): 0.00
 Performance Score: 3.65
 Resource Utilization Score: 8.74
 Total Score: 5.50
@@ -133,9 +133,9 @@ Min Latency: 172.25µs
 Max Latency: 315.070319ms
 Duration: 1m0.048024835s
 Memory (MiB): 32.72
-CPU: 0.00
-Network: 3.31
-Disk: 0.00
+CPU (%): 0.00
+Network (NetIO - MiB): 3.31
+Disk (BlockIO - MiB): 0.00
 Performance Score: 3.48
 Resource Utilization Score: 8.40
 Total Score: 5.27
@@ -152,9 +152,9 @@ Min Latency: 131.688µs
 Max Latency: 261.873368ms
 Duration: 1m0.038675133s
 Memory (MiB): 28.84
-CPU: 0.00
-Network: 3.86
-Disk: 0.00
+CPU (%): 0.00
+Network (NetIO - MiB): 3.86
+Disk (BlockIO - MiB): 0.00
 Performance Score: 3.36
 Resource Utilization Score: 8.60
 Total Score: 5.26
@@ -171,9 +171,9 @@ Min Latency: 152.392µs
 Max Latency: 387.965259ms
 Duration: 1m0.03542742s
 Memory (MiB): 42.50
-CPU: 0.00
-Network: 3.45
-Disk: 0.00
+CPU (%): 0.00
+Network (NetIO - MiB): 3.45
+Disk (BlockIO - MiB): 0.00
 Performance Score: 2.24
 Resource Utilization Score: 7.91
 Total Score: 4.30
@@ -190,9 +190,9 @@ Min Latency: 143.615µs
 Max Latency: 360.454081ms
 Duration: 1m0.028506417s
 Memory (MiB): 44.37
-CPU: 0.00
-Network: 3.84
-Disk: 0.00
+CPU (%): 0.00
+Network (NetIO - MiB): 3.84
+Disk (BlockIO - MiB): 0.00
 Performance Score: 2.27
 Resource Utilization Score: 7.82
 Total Score: 4.29
@@ -209,9 +209,9 @@ Min Latency: 110.832µs
 Max Latency: 380.518715ms
 Duration: 1m0.045652135s
 Memory (MiB): 46.45
-CPU: 0.00
-Network: 4.37
-Disk: 0.00
+CPU (%): 0.00
+Network (NetIO - MiB): 4.37
+Disk (BlockIO - MiB): 0.00
 Performance Score: 2.28
 Resource Utilization Score: 7.72
 Total Score: 4.26
@@ -228,9 +228,9 @@ Min Latency: 145.499µs
 Max Latency: 395.676116ms
 Duration: 1m0.057846172s
 Memory (MiB): 44.41
-CPU: 0.00
-Network: 3.82
-Disk: 0.00
+CPU (%): 0.00
+Network (NetIO - MiB): 3.82
+Disk (BlockIO - MiB): 0.00
 Performance Score: 2.05
 Resource Utilization Score: 7.82
 Total Score: 4.15
@@ -247,9 +247,9 @@ Min Latency: 134.368µs
 Max Latency: 367.694084ms
 Duration: 1m0.073646261s
 Memory (MiB): 49.60
-CPU: 0.00
-Network: 3.40
-Disk: 0.00
+CPU (%): 0.00
+Network (NetIO - MiB): 3.40
+Disk (BlockIO - MiB): 0.00
 Performance Score: 2.15
 Resource Utilization Score: 7.55
 Total Score: 4.11
@@ -266,9 +266,9 @@ Min Latency: 122.824µs
 Max Latency: 430.874717ms
 Duration: 1m0.041820449s
 Memory (MiB): 46.45
-CPU: 0.00
-Network: 4.44
-Disk: 0.00
+CPU (%): 0.00
+Network (NetIO - MiB): 4.44
+Disk (BlockIO - MiB): 0.00
 Performance Score: 2.02
 Resource Utilization Score: 7.72
 Total Score: 4.09
@@ -285,9 +285,9 @@ Min Latency: 141.701µs
 Max Latency: 295.011929ms
 Duration: 1m0.049900626s
 Memory (MiB): 73.16
-CPU: 0.00
-Network: 6.44
-Disk: 0.00
+CPU (%): 0.00
+Network (NetIO - MiB): 6.44
+Disk (BlockIO - MiB): 0.00
 Performance Score: 2.39
 Resource Utilization Score: 6.41
 Total Score: 3.85
@@ -304,9 +304,9 @@ Min Latency: 137.052µs
 Max Latency: 1.690303397s
 Duration: 1m0.07143065s
 Memory (MiB): 84.17
-CPU: 0.00
-Network: 3.97
-Disk: 0.00
+CPU (%): 0.00
+Network (NetIO - MiB): 3.97
+Disk (BlockIO - MiB): 0.00
 Performance Score: 0.23
 Resource Utilization Score: 5.83
 Total Score: 2.27
@@ -323,9 +323,9 @@ Min Latency: 225.642µs
 Max Latency: 309.115502ms
 Duration: 1m0.061652014s
 Memory (MiB): 3903.49
-CPU: 0.00
-Network: 3.91
-Disk: 0.00
+CPU (%): 0.00
+Network (NetIO - MiB): 3.91
+Disk (BlockIO - MiB): 0.00
 Performance Score: 2.49
 Resource Utilization Score: -185.14
 Total Score: -65.74

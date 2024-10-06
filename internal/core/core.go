@@ -189,11 +189,13 @@ func ParseUsage(usage string) float64 {
 
 	value, _ = strconv.ParseFloat(match, 64)
 
-	pattern := `[KMGT]iB`
+	pattern := `[KMGTPEZY]i?B|B`
 	re = regexp.MustCompile(pattern)
 	formatMatch := re.FindString(usage)
 	if match != "" {
 		switch formatMatch {
+		case "B":
+			value = value / (1024 * 1024)
 		case "KiB":
 			value = value / 1024
 		case "GiB":
