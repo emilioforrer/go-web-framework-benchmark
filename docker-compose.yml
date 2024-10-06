@@ -12,6 +12,14 @@ x-go-app-options: &go-app-options
   depends_on:
     - db
   # restart: unless-stopped
+  deploy:
+    resources:
+      limits:
+        cpus: "2.0"
+        memory: "4G"
+      reservations:
+        cpus: "0.25"
+        memory: "512M"
 
 services:
   go-fr:
@@ -60,6 +68,39 @@ services:
     ports:
     - "8087:8000"
     command: /app/go-gorilla-mux
+  go-chi:
+    <<: *go-app-options
+    ports:
+    - "8088:8000"
+    command: /app/go-chi
+  go-hertz:
+    <<: *go-app-options
+    ports:
+    - "8089:8000"
+    command: /app/go-hertz
+  go-std-env-test-off:
+    <<: *go-app-options
+    ports:
+    - "8090:8000"
+    command: /app/go-std
+    environment:
+      - GOGC=off # This consumes a lot of memory
+      - GOMAXPROCS=2
+      - GOMEMLIMIT=4GiB
+  go-std-env-test-on:
+    <<: *go-app-options
+    ports:
+    - "8091:8000"
+    command: /app/go-std
+    environment:
+      - GOGC=75
+      - GOMAXPROCS=2
+      - GOMEMLIMIT=4GiB
+  go-std-env-test-auto:
+    <<: *go-app-options
+    ports:
+    - "8093:8000"
+    command: /app/go-std-auto-perf
   db:
     image: postgres:14.1
     environment:

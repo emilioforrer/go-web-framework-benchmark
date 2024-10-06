@@ -17,11 +17,14 @@ RUN go build -ldflags="-s -w" -trimpath -o dist/go-bun cmd/go-bun/main.go
 RUN go build -ldflags="-s -w" -trimpath -o dist/go-fuego cmd/go-fuego/main.go
 RUN go build -ldflags="-s -w" -trimpath -o dist/go-fiber cmd/go-fiber/main.go
 RUN go build -ldflags="-s -w" -trimpath -o dist/go-std cmd/go-std/main.go
+RUN go build -ldflags="-s -w" -trimpath -o dist/go-std-auto-perf cmd/go-std-auto-perf/main.go
 RUN go build -ldflags="-s -w" -trimpath -o dist/go-gin cmd/go-gin/main.go
 RUN go build -ldflags="-s -w" -trimpath -o dist/go-gorilla-mux cmd/go-gorilla-mux/main.go
+RUN go build -ldflags="-s -w" -trimpath -o dist/go-chi cmd/go-chi/main.go
+RUN go build -ldflags="-s -w" -trimpath -o dist/go-hertz cmd/go-hertz/main.go
 
 # Production stage
-FROM scratch as prod
+FROM scratch AS prod
 
 # Set the working directory
 WORKDIR /app
